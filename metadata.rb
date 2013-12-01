@@ -15,7 +15,7 @@ recipe "rackbox::passenger", "setup `passenger` apps, if any."
 supports 'ubuntu'
 supports 'debian'
 
-depends 'appbox'
+depends 'appbox', path: 'git://github.com:ajgrayson/appbox-cookbook.git'
 depends 'rbenv'
 depends 'nginx'
 depends 'unicorn', ">= 1.2.2"
