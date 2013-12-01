@@ -14,3 +14,9 @@ recipe "rackbox::passenger", "setup `passenger` apps, if any."
 
 supports 'ubuntu'
 supports 'debian'
+
+depends 'appbox'
+depends 'rbenv'
+depends 'nginx'
+depends 'unicorn', ">= 1.2.2"
+depends 'runit', '>= 1.1.2'
