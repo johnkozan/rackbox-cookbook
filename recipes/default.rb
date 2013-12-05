@@ -7,7 +7,8 @@ include_recipe "appbox"
 include_recipe "rackbox::ruby"
 include_recipe "rackbox::nginx"
 include_recipe "runit"
-if node["rackbox"]["mysql-client"]?
+
+if node["rackbox"]["mysql-client"]
   include_recipe "rackbox::mysql-client"
 end
 
