@@ -9,7 +9,7 @@ include_recipe "rackbox::nginx"
 include_recipe "runit"
 
 if node["rackbox"]["mysql-client"]
-  include_recipe "rackbox::mysql-client"
+  include_recipe "rackbox::mysql_client"
 end
 
 
