@@ -7,10 +7,14 @@ include_recipe "appbox"
 include_recipe "rackbox::ruby"
 include_recipe "rackbox::nginx"
 include_recipe "runit"
-if node["rackbox"]["mysql-client"]?
-  include_recipe "rackbox::mysql-client"
+
+if node["rackbox"]["mysql-client"]
+  include_recipe "rackbox::mysql_client"
 end
 
+if node["rackbox"]["postgresql-client"]
+  include_recipe "rckbock::postgresql_client"
+end
 
 if node["rackbox"]["apps"]["unicorn"].any?
   include_recipe "rackbox::unicorn"
