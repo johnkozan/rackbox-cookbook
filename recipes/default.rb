@@ -8,6 +8,10 @@ include_recipe "rackbox::ruby"
 include_recipe "rackbox::nginx"
 include_recipe "runit"
 
+# if %w(centos amazon redhat).include? node["platform"]
+include_recipe "rackbox::ruby-devel"
+# end
+
 if node["rackbox"]["mysql-client"]
   include_recipe "rackbox::mysql_client"
 end
