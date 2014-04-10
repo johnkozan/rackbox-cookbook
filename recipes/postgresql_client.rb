@@ -4,4 +4,4 @@
 #
 # Install the postresql-client  if you're going to connect to a database
 #
-package 'postresql-client'
+package 'postgresql-libs'
