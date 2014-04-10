@@ -17,7 +17,7 @@ supports 'debian'
 supports 'centos'
 
 depends 'appbox'
-depends 'rbenv'
+depends 'rbenv', ">= 1.7.1"
 depends 'nginx'
 depends 'unicorn', ">= 1.2.2"
 depends 'runit', '>= 1.1.2'
