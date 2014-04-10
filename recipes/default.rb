@@ -10,6 +10,7 @@ include_recipe "runit"
 
 # if %w(centos amazon redhat).include? node["platform"]
 include_recipe "rackbox::ruby-devel"
+include_recipe "rackbox::open-ssl"
 # end
 
 if node["rackbox"]["mysql-client"]
