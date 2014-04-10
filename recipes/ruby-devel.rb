@@ -1,2 +1,2 @@
-package "ruby-rdoc "
+package "ruby-rdoc"
 package "ruby-devel"
