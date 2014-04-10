@@ -6,3 +6,4 @@
 #
 package 'postgresql-libs'
 package 'libpqxx-devel'
+package 'postgresql-devel'
