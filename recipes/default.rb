@@ -13,7 +13,7 @@ if node["rackbox"]["mysql-client"]
 end
 
 if node["rackbox"]["postgresql-client"]
-  include_recipe "rackbock::postgresql_client"
+  include_recipe "rackbox::postgresql_client"
 end
 
 if node["rackbox"]["apps"]["unicorn"].any?
