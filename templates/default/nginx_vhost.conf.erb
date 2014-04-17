@@ -4,9 +4,17 @@ upstream <%= @appname %> {
 <% end -%>
 }
 
+
 server {
   server_name <%= @hostname %>;
-  listen <%= @listen_port %>;
+  listen 80;
+  ##redirect http to https
+  rewrite ^ https://$server_name$request_uri? permanent;
+}
+
+server {
+  server_name <%= @hostname %>;
+  listen 443;
 
   root <%= @root_path %>;
 
@@ -14,9 +22,12 @@ server {
   ssl on;
   ssl_certificate     <%= @ssl_cert %>;
   ssl_certificate_key <%= @ssl_key %>;
-  ssl_protocols SSLv3 TLSv1;
+  ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
   ssl_ciphers ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!EDH:!AESGCM;
   ssl_prefer_server_ciphers on;
+  keepalive_timeout 70;
+  ssl_session_cache shared:SSL:10m;
+  ssl_session_timeout 10m;
 <% end -%>
 
   access_log <%= @log_dir %>/<%= @appname %>-access.log combined;
