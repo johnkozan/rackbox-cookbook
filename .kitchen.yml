@@ -1,0 +1,27 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+#  - name: ubuntu-12.04
+  - name: centos-6.4
+
+suites:
+  - name: default
+    run_list:
+      - recipe[rackbox::default]
+    attributes:
+      rackbox:
+        modules:
+          - rackbox::nginx
+          - rackbox::open-ssl
+          - rackbox::ruby
+          #- rackbox::passenger
+          #- rackbox::postgresql_client
+          #- rackbox::mysql_client
+          #- rackbox::ruby-devel
+          #- rackbox::unicorn
+
