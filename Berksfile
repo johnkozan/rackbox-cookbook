@@ -1,6 +1,7 @@
 site :opscode
 
-cookbook 'appbox', git: 'git://github.com/ajgrayson/appbox-cookbook.git'
+metadata
+cookbook 'appbox', git: 'git://github.com/fsultan/appbox-cookbook.git'
 cookbook 'rbenv'
 cookbook 'nginx'
 cookbook 'unicorn', ">= 1.2.2"
