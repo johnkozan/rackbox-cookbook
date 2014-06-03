@@ -1,4 +1,4 @@
-site :opscode
+source "http://api.berkshelf.com"
 
 metadata
 cookbook 'appbox', git: 'git://github.com/fsultan/appbox-cookbook.git'
