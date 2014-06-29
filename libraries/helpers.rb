@@ -60,7 +60,7 @@ module Rackbox
     end
 
     def setup_nginx_site(app, app_dir, upstream_port)
-      upstream_server = "localhost:#{upstream_port}"
+      upstream_servers = config["upstream_servers"].map! {|server| "#{server}:#{upstream_port}"}
       config = merge_nginx_config(
         node["rackbox"]["default_config"]["nginx"],
         app["nginx_config"]
@@ -77,7 +77,7 @@ module Rackbox
           :log_dir     => node["nginx"]["log_dir"],
           :appname     => app["appname"],
           :hostname    => app["hostname"],
-          :servers     => [upstream_server],
+          :servers     => upstream_servers,
           :listen_port => config["listen_port"],
           :ssl_key     => config["ssl_key"],
           :ssl_cert    => config["ssl_cert"]
